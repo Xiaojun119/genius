@@ -1,0 +1,50 @@
+下面是几道OJ上的高斯消元法求解线性方程组的题目：
+
+POJ 1222 EXTENDED LIGHTS OUT
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1222
+POJ 1681 Painter's Problem
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1681
+POJ 1753 Flip Game
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1753
+POJ 1830 开关问题
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1830
+
+POJ 3185 The Water Bowls
+
+http://acm.pku.edu.cn/JudgeOnline/problem?id=3185
+开关窗户，开关灯问题，很典型的求解线性方程组的问题。方程数和变量数均为行数*列数，直接套模板求解即可。但是，当出现无穷解时，需要枚举解的情况，因为无法判断哪种解是题目要求最优的。
+
+POJ 2947 Widget Factory
+http://acm.pku.edu.cn/JudgeOnline/problem?id=2947
+求解同余方程组问题。与一般求解线性方程组的问题类似，只要在求解过程中加入取余即可。
+注意：当方程组唯一解时，求解过程中要保证解在[3, 9]之间。
+
+POJ 1166 The Clocks
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1166
+经典的BFS问题，有各种解法，也可以用逆矩阵进行矩阵相乘。
+但是这道题用高斯消元法解决好像有些问题(困扰了我N天...持续困扰中...)，由于周期4不是素数，故在求解过程中不能进行取余(因为取余可能导致解集变大)，但最后求解集时，还是需要进行取余操作，那么就不能保证最后求出的解是正确的...在discuss里提问了好几天也没人回答...希望哪位路过的大牛指点下～～
+
+POJ 2065 SETI
+http://acm.pku.edu.cn/JudgeOnline/problem?id=2065
+同样是求解同余方程组问题，由于题目中的p是素数，可以直接在求解时取余，套用模板求解即可。(虽然AC的人很少，但它还是比较水的一道题，)
+
+POJ 1487 Single-Player Games
+http://acm.pku.edu.cn/JudgeOnline/problem?id=1487
+很麻烦的一道题目...题目中的叙述貌似用到了编译原理中的词法定义(看了就给人不想做的感觉...)
+解方程组的思想还是很好看出来了(前提是通读题目不下5遍...)，但如果把树的字符串表达式转换成方程组是个难点，我是用栈 + 递归的做法分解的。首先用栈的思想求出该结点的孩子数，然后递归分别求解各个孩子。
+这题解方程组也与众不同...首先是求解浮点数方程组，要注意精度问题，然后又询问不确定的变元，按前面说的方法求解。
+一顿折腾后，这题居然写了6000+B...而且囧的是巨人C++ WA，G++ AC，可能还是精度的问题吧...看这题目，看这代码，就没有改的欲望...
+
+hdu OJ 2449
+http://acm.hdu.edu.cn/showproblem.php?pid=2449
+哈尔滨现场赛的一道纯高斯题，当时鹤牛敲了1个多小时...主要就是写一个分数类，套个高精模板(偷懒点就Java...)搞定～～
+注意下0和负数时的输出即可。
+
+fze OJ 1704
+http://acm.fzu.edu.cn/problem.php?pid=1704
+福大月赛的一道题目，还是经典的开关问题，但是方程数和变元数不同(考验模板的时候到了～～)，最后要求增广阵的阶，要用到高精度～～
+
+Sgu 275 To xor or not to xor
+http://acm.sgu.ru/problem.php?contest=0&problem=275
+题解:
+http://hi.baidu.com/czyuan%5Facm/blog/item/be3403d32549633d970a16ee.html
